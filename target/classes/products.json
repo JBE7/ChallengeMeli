@@ -1,0 +1,183 @@
+[
+  {
+    "id": 1,
+    "name": "Apple iPhone 13 - 128GB",
+    "image_url": "https://picsum.photos/seed/iphone13-128/800/600",
+    "description": "iPhone 13, pantalla Super Retina XDR 6.1\"",
+    "price": 399999.0,
+    "rating": 4.6,
+    "specifications": {
+      "storage": "128GB",
+      "ram": "4GB",
+      "camera": "12MP"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S23 Plus - 256GB",
+    "image_url": "https://picsum.photos/seed/galaxy-s23-plus/800/600",
+    "description": "Galaxy S23 Plus, Dynamic AMOLED 6.6\"",
+    "price": 549999.0,
+    "rating": 4.7,
+    "specifications": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "camera": "50MP"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Notebook Lenovo IdeaPad 1 - 15.6\" FHD",
+    "image_url": "https://picsum.photos/seed/lenovo-ideapad1/800/600",
+    "description": "Lenovo IdeaPad 15.6\" FHD, ideal para estudio",
+    "price": 199999.0,
+    "rating": 4.4,
+    "specifications": {
+      "cpu": "Intel i3",
+      "ram": "8GB",
+      "storage": "256GB SSD"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Notebook HP 15 - Intel i5",
+    "image_url": "https://picsum.photos/seed/hp-15-i5/800/600",
+    "description": "HP 15 con Intel Core i5 11va gen",
+    "price": 269999.0,
+    "rating": 4.5,
+    "specifications": {
+      "cpu": "Intel i5",
+      "ram": "8GB",
+      "storage": "512GB SSD"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Zapatillas Nike Quest 5 - Hombre",
+    "image_url": "https://picsum.photos/seed/nike-quest5/800/600",
+    "description": "Zapatillas deportivas Nike Quest 5",
+    "price": 28999.0,
+    "rating": 4.3,
+    "specifications": {
+      "brand": "Nike",
+      "size": "42",
+      "genre": "Hombre"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Zapatillas Adidas Run Falcon - Mujer",
+    "image_url": "https://picsum.photos/seed/adidas-falcon/800/600",
+    "description": "Zapatillas Adidas Run Falcon",
+    "price": 24999.0,
+    "rating": 4.2,
+    "specifications": {
+      "brand": "Adidas",
+      "size": "38",
+      "genre": "Mujer"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Smart TV 55\" Philips 4K UHD",
+    "image_url": "https://picsum.photos/seed/philips-55-4k/800/600",
+    "description": "Philips 55\" 4K UHD Smart TV",
+    "price": 179999.0,
+    "rating": 4.4,
+    "specifications": {
+      "size": "55\"",
+      "resolution": "4K",
+      "os": "Android TV"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Smart TV BGH 50\" Google TV 4K",
+    "image_url": "https://picsum.photos/seed/bgh-50-4k/800/600",
+    "description": "BGH 50\" Google TV 4K",
+    "price": 159999.0,
+    "rating": 4.3,
+    "specifications": {
+      "size": "50\"",
+      "resolution": "4K",
+      "os": "Google TV"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Auriculares Lenovo Livepods LP75 - TWS",
+    "image_url": "https://picsum.photos/seed/livepods-lp75/800/600",
+    "description": "Auriculares TWS con gran autonomia",
+    "price": 6999.0,
+    "rating": 4.1,
+    "specifications": {
+      "battery": "24h",
+      "type": "TWS",
+      "charging": "USB-C"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Auriculares Gamer P9 - RGB",
+    "image_url": "https://picsum.photos/seed/gamer-p9/800/600",
+    "description": "Auriculares gamer con micrófono y RGB",
+    "price": 11999.0,
+    "rating": 4.0,
+    "specifications": {
+      "type": "Gaming",
+      "connectivity": "Bluetooth/Jack 3.5mm"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Smartwatch JD Venecia T32",
+    "image_url": "https://picsum.photos/seed/jd-t32/800/600",
+    "description": "Smartwatch con notificaciones y múltiples funciones",
+    "price": 7999.0,
+    "rating": 4.0,
+    "specifications": {
+      "screen": "1.96\"",
+      "battery": "7d",
+      "resistance": "IP67"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Bicicleta MTB Rodado 29 - 21v",
+    "image_url": "https://picsum.photos/seed/mtb-29/800/600",
+    "description": "Bicicleta MTB rodado 29 con suspensión delantera",
+    "price": 87999.0,
+    "rating": 4.2,
+    "specifications": {
+      "wheel": "29\"",
+      "gears": "21",
+      "frame": "Aluminio"
+    }
+  },
+  {
+    "id": 13,
+    "name": "Cámara Canon EOS Rebel - DSLR",
+    "image_url": "https://picsum.photos/seed/canon-rebel/800/600",
+    "description": "Cámara réflex Canon 24MP",
+    "price": 149999.0,
+    "rating": 4.5,
+    "specifications": {
+      "resolution": "24MP",
+      "lens": "18-55mm",
+      "video": "1080p"
+    }
+  },
+  {
+    "id": 14,
+    "name": "Monitor LG 24\" Full HD 75Hz",
+    "image_url": "https://picsum.photos/seed/lg-24-75hz/800/600",
+    "description": "Monitor LG 24\" Full HD 75Hz",
+    "price": 25999.0,
+    "rating": 4.3,
+    "specifications": {
+      "size": "24\"",
+      "refresh_rate": "75Hz",
+      "panel": "IPS"
+    }
+  }
+]
