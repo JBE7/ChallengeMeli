@@ -1,76 +1,64 @@
 package com.example.productcompare.model;
 
-import java.util.Map;
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Modelo de producto para comparación en el front. */
-public class Product {
-    private long id;
-    private String name;
-    @JsonProperty("image_url")
-    private String imageUrl;
-    private String description;
-    private double price;
-    private double rating;
-    private Map<String, String> specifications;
+import java.util.Map;
 
-    public Product() {
+/** Modelo de producto para comparación en el front. */
+public final class Product {
+    private final long id;
+    private final String name;
+    private final String imageUrl;
+    private final String description;
+    private final double price;
+    private final double rating;
+    private final Map<String, String> specifications;
+
+    @JsonCreator
+    public Product(
+            @JsonProperty("id") long id,
+            @JsonProperty("name") String name,
+            @JsonProperty("image_url") String imageUrl,
+            @JsonProperty("description") String description,
+            @JsonProperty("price") double price,
+            @JsonProperty("rating") double rating,
+            @JsonProperty("specifications") Map<String, String> specifications) {
+        this.id = id;
+        this.name = name;
+        this.imageUrl = imageUrl;
+        this.description = description;
+        this.price = price;
+        this.rating = rating;
+        this.specifications = specifications;
     }
 
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    @JsonProperty("image_url")
     public String getImageUrl() {
         return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public double getPrice() {
         return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public double getRating() {
         return rating;
     }
 
-    public void setRating(double rating) {
-        this.rating = rating;
-    }
-
     public Map<String, String> getSpecifications() {
         return specifications;
-    }
-
-    public void setSpecifications(Map<String, String> specifications) {
-        this.specifications = specifications;
     }
 }

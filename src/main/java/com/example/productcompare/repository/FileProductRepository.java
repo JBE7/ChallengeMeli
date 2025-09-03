@@ -9,6 +9,9 @@ import org.springframework.stereotype.Repository;
 
 import java.io.InputStream;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.function.Function;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Collectors;
 
@@ -18,7 +21,7 @@ import java.util.stream.Collectors;
 @Repository
 public class FileProductRepository {
     private final ObjectMapper objectMapper;
-    private List<Product> cachedProducts;
+    private Map<Long, Product> cachedProducts;
     private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
     public FileProductRepository(ObjectMapper objectMapper) {
@@ -30,8 +33,9 @@ public class FileProductRepository {
     public void init() {
         lock.writeLock().lock();
         try (InputStream is = new ClassPathResource("products.json").getInputStream()) {
-            cachedProducts = objectMapper.readValue(is, new TypeReference<List<Product>>() {
-            });
+            List<Product> productList = objectMapper.readValue(is, new TypeReference<List<Product>>() {});
+            cachedProducts = productList.stream()
+                    .collect(Collectors.toMap(Product::getId, Function.identity()));
         } catch (Exception e) {
             throw new RuntimeException("Failed to load products.json", e);
         } finally {
@@ -43,7 +47,7 @@ public class FileProductRepository {
     public List<Product> findAll() {
         lock.readLock().lock();
         try {
-            return List.copyOf(cachedProducts);
+            return List.copyOf(cachedProducts.values());
         } finally {
             lock.readLock().unlock();
         }
@@ -53,7 +57,7 @@ public class FileProductRepository {
     public Product findById(long id) {
         lock.readLock().lock();
         try {
-            return cachedProducts.stream().filter(p -> p.getId() == id).findFirst().orElse(null);
+            return cachedProducts.get(id);
         } finally {
             lock.readLock().unlock();
         }
@@ -66,8 +70,8 @@ public class FileProductRepository {
         lock.readLock().lock();
         try {
             return ids.stream()
-                    .map(id -> cachedProducts.stream().filter(p -> p.getId() == id).findFirst().orElse(null))
-                    .filter(p -> p != null)
+                    .map(cachedProducts::get)
+                    .filter(Objects::nonNull)
                     .collect(Collectors.toList());
         } finally {
             lock.readLock().unlock();
