@@ -77,7 +77,7 @@ mvn -q -Dtest=*Test test
 - También que generara un set de datos de pruebas basado en productos que podría encontrar dentro de la página de Mercado Libre
 - Investigué la integración con la API de Developers de Mercado Libre para traer productos, pero por cuestiones de tiempo lo dejé estructurado para un segundo MVP (MercadoLibreClient.java)
 
-## Mejoras Realizadas (Sept 2025)
+## Mejoras Realizadas (Sept 2025- jules.google.com)
 
 Se realizó una refactorización y mejora integral del código, con los siguientes cambios clave:
 
