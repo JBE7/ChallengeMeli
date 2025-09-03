@@ -14,6 +14,16 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionHandler {
     private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Map<String, Object>> handleIllegalArgument(IllegalArgumentException ex) {
+        log.warn("BadRequest: {}", ex.getMessage());
+        return ResponseEntity.status(400).body(Map.of(
+                "timestamp", Instant.now(),
+                "status", 400,
+                "error", "Bad Request",
+                "message", ex.getMessage()));
+    }
+
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<Map<String, Object>> handleNotFound(NotFoundException ex) {
         log.warn("NotFound: {}", ex.getMessage());

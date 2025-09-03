@@ -77,3 +77,11 @@ mvn -q -Dtest=*Test test
 - También que generara un set de datos de pruebas basado en productos que podría encontrar dentro de la página de Mercado Libre
 - Investigué la integración con la API de Developers de Mercado Libre para traer productos, pero por cuestiones de tiempo lo dejé estructurado para un segundo MVP (MercadoLibreClient.java)
 
+## Mejoras Realizadas (Sept 2025)
+
+Se realizó una refactorización y mejora integral del código, con los siguientes cambios clave:
+
+*   **Rendimiento:** Se optimizó el `FileProductRepository` para usar un `Map` en lugar de una `List` para el caché de productos, mejorando la velocidad de búsqueda de O(n) a O(1).
+*   **Inmutabilidad:** El modelo `Product` ahora es inmutable, una buena práctica que aumenta la seguridad en entornos multi-hilo y la predictibilidad del código.
+*   **Manejo de Errores:** Se mejoró la validación en el endpoint `/compare` para que devuelva un error 400 (Bad Request) si se proveen IDs inválidos. Además, la lógica de "producto no encontrado" se movió a la capa de servicio, mejorando la separación de responsabilidades.
+*   **Calidad de Código:** Se corrigió un bug sutil en el manejo de excepciones con streams de Java, reemplazándolo por un bucle `for` más claro y robusto.

@@ -1,7 +1,8 @@
-C:\Users\jbrea\ChallengeMeli\src\main\java\com\example\productcompare\model\Product.java
-C:\Users\jbrea\ChallengeMeli\src\main\java\com\example\productcompare\ProductCompareApplication.java
-C:\Users\jbrea\ChallengeMeli\src\main\java\com\example\productcompare\repository\FileProductRepository.java
-C:\Users\jbrea\ChallengeMeli\src\main\java\com\example\productcompare\controller\ProductController.java
-C:\Users\jbrea\ChallengeMeli\src\main\java\com\example\productcompare\exception\NotFoundException.java
-C:\Users\jbrea\ChallengeMeli\src\main\java\com\example\productcompare\exception\GlobalExceptionHandler.java
-C:\Users\jbrea\ChallengeMeli\src\main\java\com\example\productcompare\service\ProductService.java
+/app/src/main/java/com/example/productcompare/repository/FileProductRepository.java
+/app/src/main/java/com/example/productcompare/ProductCompareApplication.java
+/app/src/main/java/com/example/productcompare/exception/NotFoundException.java
+/app/src/main/java/com/example/productcompare/exception/GlobalExceptionHandler.java
+/app/src/main/java/com/example/productcompare/service/ProductService.java
+/app/src/main/java/com/example/productcompare/controller/ProductController.java
+/app/src/main/java/com/example/productcompare/integrations/MercadoLibreClient.java
+/app/src/main/java/com/example/productcompare/model/Product.java

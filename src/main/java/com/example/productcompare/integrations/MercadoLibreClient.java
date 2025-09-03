@@ -92,18 +92,18 @@ public class MercadoLibreClient {
     }
 
     private Product mapToProductFromSearchResult(MLResult r) {
-        Product p = new Product();
-        p.setId(generateLocalIdFrom(r.id));
-        p.setName(r.title != null ? r.title : "Producto ML");
-        p.setImageUrl(r.thumbnail); // thumbnail viene en el search result y suele ser URL directa a imagen
-        p.setDescription(""); // el search no trae descripción larga; podrías llamar /items/{id} si la necesitás
-        p.setPrice(r.price != null ? r.price : 0.0);
-        p.setRating(0.0);
-        Map<String,String> specs = new HashMap<>();
+        Map<String, String> specs = new HashMap<>();
         specs.put("permalink", r.permalink != null ? r.permalink : "");
         specs.put("sold_quantity", String.valueOf(r.soldQuantity == null ? 0 : r.soldQuantity));
-        p.setSpecifications(specs);
-        return p;
+
+        return new Product(
+                generateLocalIdFrom(r.id),
+                r.title != null ? r.title : "Producto ML",
+                r.thumbnail, // thumbnail viene en el search result y suele ser URL directa a imagen
+                "", // el search no trae descripción larga; podrías llamar /items/{id} si la necesitás
+                r.price != null ? r.price : 0.0,
+                0.0,
+                specs);
     }
 
     private long generateLocalIdFrom(String mlId) {

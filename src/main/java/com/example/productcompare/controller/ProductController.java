@@ -42,11 +42,7 @@ public class ProductController {
      */
     @GetMapping("/{id}")
     public ResponseEntity<Product> byId(@PathVariable("id") long id) {
-        Product p = service.getProductById(id);
-        if (p == null) {
-            throw new NotFoundException("Product with id " + id + " not found");
-        }
-        return ResponseEntity.ok(p);
+        return ResponseEntity.ok(service.getProductById(id));
     }
 
     /**
@@ -54,17 +50,15 @@ public class ProductController {
      */
     @GetMapping("/compare")
     public ResponseEntity<List<Product>> compare(@RequestParam("ids") String ids) {
-        List<Long> idList = Arrays.stream(ids.split(","))
-                .map(String::trim)
-                .map(s -> {
-                    try {
-                        return Long.parseLong(s);
-                    } catch (NumberFormatException e) {
-                        return null;
-                    }
-                })
-                .filter(x -> x != null)
-                .collect(Collectors.toList());
+        String[] idStrings = ids.split(",");
+        List<Long> idList = new java.util.ArrayList<>();
+        for (String idString : idStrings) {
+            try {
+                idList.add(Long.parseLong(idString.trim()));
+            } catch (NumberFormatException e) {
+                throw new IllegalArgumentException("Invalid ID format in list: " + idString);
+            }
+        }
         return ResponseEntity.ok(service.getProductsForCompare(idList));
     }
 }

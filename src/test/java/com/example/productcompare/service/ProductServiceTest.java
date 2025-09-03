@@ -20,12 +20,8 @@ public class ProductServiceTest {
     @BeforeEach
     public void setup() {
         repo = Mockito.mock(FileProductRepository.class);
-        Product p1 = new Product();
-        p1.setId(1);
-        p1.setName("A");
-        Product p2 = new Product();
-        p2.setId(2);
-        p2.setName("B");
+        Product p1 = new Product(1L, "A", "url1", "desc1", 10.0, 4.0, java.util.Collections.emptyMap());
+        Product p2 = new Product(2L, "B", "url2", "desc2", 20.0, 5.0, java.util.Collections.emptyMap());
         when(repo.findAll()).thenReturn(List.of(p1, p2));
         when(repo.findById(1L)).thenReturn(p1);
         when(repo.findByIds(List.of(2L, 1L))).thenReturn(List.of(p2, p1));
